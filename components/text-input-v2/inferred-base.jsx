@@ -108,12 +108,13 @@ export class InferredBase extends Component {
 			<RelativeContainer className={this.props.className}>
 				{this.props.children({ inferred: !!ConfidenceIcon })}
 				<IndicatorContainer className={ConfidenceIcon ? 'hasConfidence' : ''}>
-					<Tooltip text={tooltipContents} styleOverrides={{ minWidth: 300 }} placement="top-end">
-						<ConfidenceIconContainer
-							onClick={() => {
-								onConfirm();
-							}}
-						>
+					<Tooltip
+						onConfirm={onConfirm}
+						text={tooltipContents}
+						styleOverrides={{ minWidth: 300 }}
+						placement="top-end"
+					>
+						<ConfidenceIconContainer>
 							<OKCircle className="okIcon" />
 							{ConfidenceIcon}
 						</ConfidenceIconContainer>

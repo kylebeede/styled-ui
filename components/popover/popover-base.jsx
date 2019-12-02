@@ -152,6 +152,8 @@ export class PopoverBase extends Component {
 			},
 		};
 
+		console.log(popperModifiers);
+
 		const popover = (
 			<Popper
 				placement={popoverPlacement}
